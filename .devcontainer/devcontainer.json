@@ -12,7 +12,7 @@
 				"vadimcn.vscode-lldb"
 			],
 			"settings": {
-				"rust-analyzer.linkedProjects": ["./examples/cli-utils/Cargo.toml"]
+				"rust-analyzer.linkedProjects": ["./examples/cli-utils/Cargo.toml", "./examples/my_library/Cargo.toml"]
 			}
 
 		}
