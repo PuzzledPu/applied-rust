@@ -10,7 +10,11 @@
 				"GitHub.copilot",
 				"rust-lang.rust-analyzer",
 				"vadimcn.vscode-lldb"
-			]
+			],
+			"settings": {
+				"rust-analyzer.linkedProjects": ["./examples/cli-utils/Cargo.toml"]
+			}
+
 		}
 	}
 
