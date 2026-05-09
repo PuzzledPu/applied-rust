@@ -38,6 +38,8 @@ pub enum Color{
     Bold,
 }
 
+/// A struct that holds a string and a color, and has a method to paint the 
+/// string with the color and assign it to a colorized field.
 pub struct ColorString {
     pub color: Color,
     pub string: String,
