@@ -36,6 +36,19 @@ pub enum LogOutput {
 /// use cli_utils::config::{Logging, LogLevel, LogOutput};
 /// let config = Logging{ enabled: true, level: LogLevel::Info, destination: LogOutput::Stdout };
 /// ```
+/// 
+/// Getting the values of the Logging struct:
+/// ```
+/// use cli_utils::config::{Logging, LogLevel, LogOutput};
+/// let config = Logging{ enabled: true, level: LogLevel::Info, destination: LogOutput::Stdout };
+/// let (enabled, level, destination) = config.getter();
+/// ```
+/// Setting the values of the Logging struct:
+/// ```
+/// use cli_utils::config::{Logging, LogLevel, LogOutput};
+/// let mut config = Logging::new();
+/// config.setter(true, LogLevel::Debug, LogOutput::Stderr);
+/// ```
 pub struct Logging {
     pub enabled: bool,
     pub level: LogLevel,
@@ -49,5 +62,15 @@ impl Logging {
             level: LogLevel::Info,
             destination: LogOutput::Stdout,
         }
+    }
+
+    pub fn getter(&self) -> (bool, &LogLevel, &LogOutput) {
+        (self.enabled, &self.level, &self.destination)
+    }
+
+    pub fn setter(&mut self, enabled: bool, level: LogLevel, destination: LogOutput) {
+        self.enabled = enabled;
+        self.level = level;
+        self.destination = destination;
     }
 }
