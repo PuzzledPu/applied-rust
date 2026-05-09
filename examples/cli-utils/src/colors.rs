@@ -31,19 +31,19 @@ pub fn reset(s: &str) -> String {
     format!("\x1b[0m{}\x1b[0m", s)
 }
 
-pub enum Color{
+pub enum Color {
     Red,
     Green,
     Blue,
     Bold,
 }
 
-/// A struct that holds a string and a color, and has a method to paint the 
+/// A struct that holds a string and a color, and has a method to paint the
 /// string with the color and assign it to a colorized field.
 pub struct ColorString {
     pub color: Color,
     pub string: String,
-    pub colorized: String
+    pub colorized: String,
 }
 
 impl ColorString {
@@ -60,5 +60,4 @@ impl ColorString {
     pub fn reset(&mut self) {
         self.colorized = reset(&self.string);
     }
-
 }

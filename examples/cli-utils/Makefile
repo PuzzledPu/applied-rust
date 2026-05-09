@@ -18,6 +18,12 @@ fmt: ## Format the project using cargo
 	@rustup component add rustfmt 2> /dev/null
 	cargo fmt
 
+test: ## Test the project using cargo
+	cargo test
+
+doc: ## Generate documentation using cargo
+	cargo doc --open
+
 bump: ## Bump the version number
 	@echo "Current version is $(shell cargo pkgid | cut -d# -f2)"
 	@read -p "Enter new version number: " version; \
