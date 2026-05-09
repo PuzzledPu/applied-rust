@@ -12,6 +12,12 @@ pub enum LogLevel {
     Error,
 }
 
+/// This enum represents the possible destinations for log output.
+/// # Examples:
+/// ```
+/// use cli_utils::config::LogOutput;
+/// let output = LogOutput::Stdout;
+/// ```
 pub enum LogOutput {
     Stdout,
     Stderr,
